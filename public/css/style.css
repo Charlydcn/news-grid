@@ -25,6 +25,7 @@ body {
 
 a {
     text-decoration: none;
+    color: currentColor;
 }
 
 ul {
@@ -34,30 +35,27 @@ ul {
 p {
     font-size: clamp(1rem, 1.1vw, 1.125rem);
     line-height: clamp(1.25rem, 1.5vw, 1.5rem);
-    margin: 1rem 0;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 h2 {
     font-size: 2rem;
 }
 
-h3 {
+h3,
+h3 a {
     font-size: 1.5rem;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h3 a {
     font-family: 'Staatliches', sans-serif;
     margin-bottom: .75rem;
-}
-
-h3 {
-    font-size: 1.5rem;
 }
 
 button,
@@ -70,6 +68,7 @@ button,
     cursor: pointer;
     font-size: 1.125rem;
     text-align: center;
+    margin-top: .5rem;
 }
 
 .btn-secondary {
@@ -82,7 +81,7 @@ button,
 }
 
 article {
-    padding: 1rem;
+    padding: 1rem
 }
 
 nav {
@@ -151,8 +150,9 @@ nav > .container > a img {
     position: absolute;
     top: 0.5rem;
     opacity: .66;
-    right: 0rem;
+    right: 1rem;
     font-size: 2rem;
+    padding: 0;
 }
 
 #desktop-nav {
@@ -162,7 +162,8 @@ nav > .container > a img {
     justify-content: flex-end;
 }
 
-#desktop-nav > ul {
+#desktop-nav > ul,
+.social-container {
     display: flex;
     gap: .75rem;
 }
@@ -173,7 +174,7 @@ nav a {
     font-weight: 700;
 }
 
-#desktop-nav > ul:first-of-type li a {
+.link-social {
     font-size: 2.25rem;
     opacity: 0.66;
 }
@@ -219,13 +220,15 @@ section {
     max-width: 39rem;
 }
 
+#intro > section article a {
+    display: block;
+    width: fit-content;
+    margin-top: 1rem;
+}
+
 #intro h1 {
     font-size: 3rem;
     margin-top: .5rem;
-}
-
-#intro button {
-    padding: .75rem 2rem;
 }
 
 h4 {
@@ -239,15 +242,18 @@ h4 {
     font-weight: unset;
 }
 
-h4.sports {
+.yellow,
+.sports {
     background-color: var(--yellow);
 }
 
-h4.entertainment {
+.purple,
+.entertainment {
     background-color: var(--purple);
 }
 
-h4.technology {
+.blue,
+.technology {
     background-color: var(--blue);
 }
 
@@ -283,13 +289,10 @@ h4.technology {
     flex-direction: row;
 }
 
-.card img {
-    width: 100%;
-}
-
 .grid-container .card:first-of-type img,
 .grid-container .card:last-of-type img {
     width: 50%;
+    height: 15rem;
 }
 
 .card {
@@ -299,6 +302,15 @@ h4.technology {
     align-items: center;
     flex-direction: column;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card > div {
+    margin-bottom: auto;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .card > div > :not(:last-child) {
@@ -367,6 +379,107 @@ h4.technology {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-container {
+    margin: 2rem auto;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.contact-container form {
+    grid-area: span 2 / span 3;
+}
+
+.contact-container aside {
+    grid-area: span 2 / span 1;
+}
+
+#contact-form {
+    background-color: white;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    max-width: 50rem;
+    position: relative;
+}
+
+#contact-form > p {
+    position: absolute;
+    color: var(--red);
+    font-weight: 500;
+    top: .5rem;
+    right: .75rem;
+    font-family: 'Staatliches', sans-serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+#contact-form > div {
+    position: relative;
+    padding-top: 1.3rem;
+}
+
+#contact-form *:not(h1):not(label) {
+    font-family: 'Lato';
+    font-size: 1rem;
+}
+
+#contact-form > div label {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    color: rgb(0,0,0,.66);
+}
+
+.optionnal {
+    color: var(--red);
+    margin-left: 2px;
+}
+
+#contact-form > div input,
+#contact-form > div textarea,
+#contact-form > select,
+#contact-form > div select {
+    width: 100%;
+    border: 1px solid rgb(0 0 0 / 40%);
+    border-radius: 2px;
+    padding: .5rem .5rem;
+    transition: box-shadow .3s, border .3s;
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+#contact-form > div input:focus,
+#contact-form > div textarea:focus,
+#contact-form > select:focus,
+#contact-form > div select:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 1px var(--yellow);
+    border: 1px solid transparent;
+}
+
+.full-width {
+    grid-column: span 6;
+}
+
+.half-width {
+    grid-column: span 3;
+}
+
+.third-width {
+    grid-column: span 2;
+}
+
+.two-thirds-width {
+    grid-column: span 4;
 }
 
 footer {
@@ -374,6 +487,14 @@ footer {
     width: 100%;
     padding-bottom: 1rem;
     margin-top: auto;
+}
+
+footer article {
+    padding-bottom: 0;
+}
+
+footer .social-container {
+    display: none;
 }
 
 footer > .container:not(p) {
@@ -403,6 +524,7 @@ footer form input {
 
 footer img {
     height: 3rem;
+    margin-bottom: 1rem;
 }
 
 footer > p {
@@ -425,6 +547,10 @@ footer button {
 
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
     }
 
     .grid-container .card:first-of-type,
@@ -453,6 +579,10 @@ footer button {
         display: none;
     }
 
+    footer .social-container {
+        display: flex;
+    }
+
     #nav-btn {
         display: block;
     }
@@ -460,14 +590,21 @@ footer button {
     nav > .container > button {
         display: block;
     }
+
+    .article-container {
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    }
+
+    .article-container > article {
+        grid-area: span 2 / span 2;
+    }
+
+    .article-container aside {
+        grid-area: span 1 / span 2;
+    }
 }
 
 @media screen and (max-width: 768px) {
-
-    section,
-    .container:not(nav .container) {
-        max-width: min(25rem, 80vw);
-    }
 
     footer > .container:not(p) {
         grid-template-columns: repeat(1, 4fr);
@@ -476,6 +613,25 @@ footer button {
 
     .grid-container {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .about-container {
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    }
+
+    .contact-container form {
+        grid-area: span 1 / span 4;
+    }
+    
+    .contact-container aside {
+        grid-area: span 1 / span 4;
+    }
+
+    .full-width,
+    .half-width,
+    .two-thirds-width,
+    .third-width {
+        grid-column: span 6;
     }
 
 }

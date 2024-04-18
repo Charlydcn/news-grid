@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="public/css/style.css">
-    <title>Article - NewsGrid</title>
+    <title>Contact - NewsGrid</title>
 </head>
 <body>
     <nav>
@@ -88,86 +88,72 @@
         </button>
     </nav>
     
-    <main class="container article-container">
-        <article>
-            <header>
-                <img src="/public/img/weirdguy.jpg" alt="">
-                <h1>OUR EFFICIENT ENTERTAINMENT SERVICE DELIVERY</h1>
-            </header>
+    <main class="container contact-container">
+        <form id="contact-form">
+            <h1 class="full-width">TELL US EVERYTHING</h1>
 
-            <address>
-                <p>
-                    <i class="fa-solid fa-user"></i>
-                    Written by Clifford Ouma
-                    <br>
-                    January 10th 2019
-                </p>
-                
-                <h4 class="entertainment">ENTERTAINMENT</h4>
-            </address>
+            <div class="full-width">
+                <label for="subject">Select your subjet</label>
+                <select id="subject" class="full-width">
+                    <option>I want to join your team</option>
+                    <option>I want a partnership</option>
+                    <option>I want an ice-cream</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        
+            <div class="half-width">
+                <label for="first_name">First name</label>
+                <input type="text" id="first_name">
+            </div>
+        
+            <div class="half-width">
+                <label for="last_name">Last name</label>
+                <input type="text" id="last_name">
+            </div>
+        
+            <div class="two-thirds-width">
+                <label for="website_input">Website<span class="optionnal">*</span></label>
+                <input type="text" id="website_input">
+            </div>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, esse reiciendis. Magnam labore doloremque aliquid beatae ut eveniet illo dicta
-                cupiditate quasi, consequuntur quos expedita. Sint quasi asperiores sapiente quo cupiditate fugiat laudantium illum in iusto doloremque animi quaerat
-                ea molestias, necessitatibus vitae vel nam eum et error facere minima.
-            </p>
+            <div class="third-width">
+                <label for="company_input">Company name<span class="optionnal">*</span></label>
+                <input type="text" id="company_input">
+            </div>
+        
+            <div class="third-width">
+                <label for="country_input">Country<span class="optionnal">*</span></label>
+                <input type="text" id="country_input">
+            </div>
+        
+            <div class="third-width">
+                <label for="city_input">City<span class="optionnal">*</span></label>
+                <input type="text" id="city_input">
+            </div>
+        
+            <div class="third-width">
+                <label for="zipcode_input">Zip Code<span class="optionnal">*</span></label>
+                <input type="text" id="zipcode_input">
+            </div>
+        
+            <div class="full-width">
+                <label for="content_text">Content</label>
+                <textarea id="content_text" cols="30" rows="10"></textarea>
+            </div>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem laboriosam veritatis doloremque eligendi temporibus magni inventore animi, facere,
-                natus reprehenderit quo quibusdam iusto, nam cumque? Officiis, eaque quis error alias quos vitae dolor commodi fugit obcaecati dolorum veritatis?
-                Ea, quas animi. Harum eius sint maxime ratione magni unde ea vitae quam esse modi deleniti enim quas quo accusamus, temporibus aut totam numquam expedita
-                officia, id earum praesentium dolore. Ad, minus id hic officiis totam tempore molestiae accusamus nihil deleniti repellendus nisi delectus obcaecati
-                consequatur error aspernatur esse est magnam. Repellendus dicta perspiciatis voluptatibus blanditiis sunt, quod ullam quam et.
-            </p>
+            <input class="full-width btn-primary" type="submit" value="SEND">
 
-        </article>
+            <p>*Optionnal</p>
+        </form>
 
         <aside>
-            <article>
-                <h3>CATEGORIES</h3>
-                <ul class="list">
-                    <li>
-                        <a>
-                            <i class="fa-solid fa-chevron-right"></i>
-                            Sports
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a>
-                            <i class="fa-solid fa-chevron-right"></i>
-                            Entertainment
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a>
-                            <i class="fa-solid fa-chevron-right"></i>
-                            Technology
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a>
-                            <i class="fa-solid fa-chevron-right"></i>
-                            Fashion
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a>
-                            <i class="fa-solid fa-chevron-right"></i>
-                            Trade
-                        </a>
-                    </li>
-                </ul>
-            </article>
-
-            <article>
-                <h3>JOIN OUR CLUB</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, recusandae?</p>
-                <button class="btn-tertiary">Join now</button>
-            </article>
+            <h2>CONTACT INFOS</h2>
+            <ul class="list">
+                <li>info@newsgrid.com</li>
+                <li>123 Main Street, Anytown, USA</li>
+                <li>+1 (555) 123-4567</li>
+            </ul>
         </aside>
     </main>
 
@@ -260,7 +246,6 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="public/js/article.js"></script>
     <script src="public/js/script.js"></script>
 </body>
 </html>
