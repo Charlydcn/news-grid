@@ -48,9 +48,9 @@ function displayArticles(articles) {
         // couleur aléatoire dans le tableau de couleur
         let color = colors[Math.floor(Math.random() * colors.length)];
         // on limite le titre à 35 caractères avec une fonction de trim personnalisée pour ne pas couper en plein milieu d'un mot
-        let title = trimString(article['title'], 35);
+        let title = article['title'] ? trimString(article['title'], 35) : 'No title found';
         // limite la description aussi
-        let description = trimString(article['description'], 150);
+        let description = article['description'] ? trimString(article['description'], 150) : 'No description found';
 
         // on hydrate les balises vides avec les données récupérées
         $(card).find('img').attr('src', img);

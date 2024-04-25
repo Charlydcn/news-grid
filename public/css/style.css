@@ -190,47 +190,6 @@ section {
     margin: auto;
 }
 
-#intro {
-    padding: 10rem 0;
-    color: #fff;
-    position: relative;
-    background-image: url('/public/img/nfl.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-#intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
-#intro > section {
-    position: relative;
-    z-index: 2;
-    margin: auto;
-}
-
-#intro > section article {
-    max-width: 39rem;
-}
-
-#intro > section article a {
-    display: block;
-    width: fit-content;
-    margin-top: 1rem;
-}
-
-#intro h1 {
-    font-size: 3rem;
-    margin-top: .5rem;
-}
-
 h4 {
     font-size: .7rem;
     width: -webkit-fit-content;
@@ -275,6 +234,48 @@ h4 {
     background-color: currentColor;
     opacity: .1;
     margin: .5rem 0;
+}
+/* ----------------------------------------------------------------------------------------------------- */
+/* index.html ------------------------------------------------------------------------------------------ */
+#intro {
+    padding: 10rem 0;
+    color: #fff;
+    position: relative;
+    background-image: url('/public/img/nfl.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+#intro > section {
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
+#intro > section article {
+    max-width: 39rem;
+}
+
+#intro > section article a {
+    display: block;
+    width: fit-content;
+    margin-top: 1rem;
+}
+
+#intro h1 {
+    font-size: 3rem;
+    margin-top: .5rem;
 }
 
 .grid-container {
@@ -326,7 +327,12 @@ h4 {
     background-color: var(--black);
     color: white;
 }
+/* ----------------------------------------------------------------------------------------------------- */
 
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* about.html ------------------------------------------------------------------------------------------ */
 .about-container {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(3, 1fr); /* 3x2 container */
@@ -345,7 +351,12 @@ h4 {
     grid-column: span 1;
     grid-row: span 1;
 }
+/* ----------------------------------------------------------------------------------------------------- */
 
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* article.html ------------------------------------------------------------------------------------------ */
 .article-container {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(3, 1fr);
@@ -381,7 +392,12 @@ h4 {
     padding: 0.5rem;
     margin-bottom: 1rem;
 }
+/* ----------------------------------------------------------------------------------------------------- */
 
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* contact.html ---------------------------------------------------------------------------------------- */
 .contact-container {
     margin: 2rem auto;
     display: grid;
@@ -408,7 +424,7 @@ h4 {
     position: relative;
 }
 
-#contact-form > p {
+.mandatory-text {
     position: absolute;
     color: var(--red);
     font-weight: 500;
@@ -436,16 +452,22 @@ h4 {
     font-size: 14px;
     color: rgb(0,0,0,.66);
 }
+/* ----------------------------------------------------------------------------------------------------- */
 
-.optionnal {
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+/* form rules ------------------------------------------------------------------------------------------ */
+
+.mandatory {
     color: var(--red);
     margin-left: 2px;
 }
 
-#contact-form > div input,
-#contact-form > div textarea,
-#contact-form > select,
-#contact-form > div select {
+input,
+textarea,
+select,
+select {
     width: 100%;
     border: 1px solid rgb(0 0 0 / 40%);
     border-radius: 2px;
@@ -453,14 +475,14 @@ h4 {
     transition: box-shadow .3s, border .3s;
 }
 
-#contact-form textarea {
+textarea {
     resize: vertical;
 }
 
-#contact-form > div input:focus,
-#contact-form > div textarea:focus,
-#contact-form > select:focus,
-#contact-form > div select:focus {
+input:focus,
+textarea:focus,
+select:focus,
+select:focus {
     outline: none;
     box-shadow: 0px 0px 0px 1px var(--yellow);
     border: 1px solid transparent;
@@ -481,7 +503,10 @@ h4 {
 .two-thirds-width {
     grid-column: span 4;
 }
+/* ----------------------------------------------------------------------------------------------------- */
 
+/* ----------------------------------------------------------------------------------------------------- */
+/* footer ---------------------------------------------------------------------------------------------- */
 footer {
     background-color: var(--black);
     width: 100%;
@@ -537,6 +562,9 @@ footer > p {
 footer button {
     background-color: var(--yellow);
 }
+/* ----------------------------------------------------------------------------------------------------- */
+
+
 
 @media screen and (max-width: 1150px) {
 
@@ -619,12 +647,26 @@ footer button {
         grid-template: repeat(3, 1fr) / repeat(2, 1fr);
     }
 
+    .contact-container {
+        grid-template: repeat(1, 1fr) / repeat(4, 1fr);
+    }
+
     .contact-container form {
         grid-area: span 1 / span 4;
     }
     
     .contact-container aside {
         grid-area: span 1 / span 4;
+    }
+
+    .mandatory-text {
+        position: unset;
+        grid-area: span 1 / span 6;
+        margin: -1rem 0 1rem;
+    }
+
+    h1 {
+        margin-bottom: 0;
     }
 
     .full-width,
