@@ -1,13 +1,12 @@
 // --------------------------------------------------------------------------------------------------------
 // hydratation articles homepage --------------------------------------------------------------------------
-const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
-const API_ENDPOINT = "https://newsapi.org/v2/top-headlines";
+const API_ENDPOINT = "https://newsapi.org/v2/top-headlines"
 const API_KEY = "a3bc1825ad8d416fafdaf29e5477dc77";
 
 // appel API
 function apiCall(country, language, size) {
     $.ajax({
-        url: `${CORS_PROXY}${API_ENDPOINT}?country=${country}&language=${language}&pageSize=${size}&apiKey=${API_KEY}`,
+        url: `${API_ENDPOINT}?country=${country}&language=${language}&pageSize=${size}&apiKey=${API_KEY}`,
         method: 'GET',
         dataType: 'json',
         success: function(data) {
