@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------
 // hydratation articles homepage --------------------------------------------------------------------------
-const API_ENDPOINT = "https://newsapi.org/v2/top-headlines"
+const API_ENDPOINT = "/api/proxy";
 const API_KEY = "a3bc1825ad8d416fafdaf29e5477dc77";
 
 // appel API
